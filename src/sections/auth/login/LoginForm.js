@@ -32,7 +32,7 @@ export default function LoginForm() {
 
   const defaultValues = {
     email: 'hello@me.com',
-    password: 'hello@123',
+    password: 'hello123',
     remember: true,
   };
 

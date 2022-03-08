@@ -10,7 +10,7 @@ import { _userPayment, _userAddressBook, _userInvoices } from '../../_mock';
 import Page from '../../components/Page';
 import Iconify from '../../components/Iconify';
 import {
-  AccountBilling,
+  TimingMainCard,
 } from '../../sections/@dashboard/timing';
 
 // ----------------------------------------------------------------------
@@ -24,17 +24,17 @@ export default function UserAccount() {
     {
       value: 'opening_hours',
       icon: <Iconify icon={'ic:round-receipt'} width={20} height={20} />,
-      component: <AccountBilling cards={_userPayment} addressBook={_userAddressBook} invoices={_userInvoices} />,
+      component: <TimingMainCard cards={_userPayment} addressBook={_userAddressBook} invoices={_userInvoices} />,
     },
     {
       value: 'holidays',
       icon: <Iconify icon={'eva:bell-fill'} width={20} height={20} />,
-      component: <AccountBilling cards={_userPayment} addressBook={_userAddressBook} invoices={_userInvoices} />,
+      component: <TimingMainCard cards={_userPayment} addressBook={_userAddressBook} invoices={_userInvoices} />,
     },
     {
       value: 'special_hours',
       icon: <Iconify icon={'eva:share-fill'} width={20} height={20} />,
-      component: <AccountBilling cards={_userPayment} addressBook={_userAddressBook} invoices={_userInvoices} />,
+      component: <TimingMainCard cards={_userPayment} addressBook={_userAddressBook} invoices={_userInvoices} />,
     },
   ];
 

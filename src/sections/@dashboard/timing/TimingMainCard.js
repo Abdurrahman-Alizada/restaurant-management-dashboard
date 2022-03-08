@@ -1,17 +1,12 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { useState } from 'react';
-// @mui
+import { useSelector } from 'react-redux'
 import { Grid, } from '@mui/material';
 
 import {TimingSingleDay} from '.';
 // ----------------------------------------------------------------------
-import {addTiming} from '../../../redux/slices/Timing'
 
 export default function TimingMainCard() {
-  const [open, setOpen] = useState(false);
 
-  const timings = useSelector((state) => state.timing)
-  const dispatch = useDispatch()
+  const timings = useSelector((state) => state.timing.days)
 
   return (
       <Grid container spacing={2}>
@@ -19,10 +14,7 @@ export default function TimingMainCard() {
         <Grid key={index} item xs={12} >
         <TimingSingleDay
           timing={timing}
-          isOpen={open}
-          addTiming={()=>dispatch(addTiming())}
-          onOpen={() => setOpen(!open)}
-          onCancel={() => setOpen(false)}
+          index={index}
         />
         </Grid>
 
