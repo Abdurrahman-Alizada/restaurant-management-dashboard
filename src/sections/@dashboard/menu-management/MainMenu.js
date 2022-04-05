@@ -7,7 +7,7 @@ import Iconify from '../../../components/Iconify';
 
 // components
 import Page from '../../../components/Page';
-import { Dish, DishSearch, NewDish } from './Dish';
+import { Main, DishSearch, NewDish } from './Dish';
 // ----------------------------------------------------------------------
 
 const TabsWrapperStyle = styled('div')(({ theme }) => ({
@@ -37,6 +37,37 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-start',
 }));
 
+const posts = [
+  {
+    title: "Basit",
+    name : "Basit",
+    roomNumber : "23" , 
+    bookdAt : "23/4/23", 
+    person : '3-5', 
+    cover : "https://minimal-assets-api.vercel.app/assets/images/rooms/room-1.jpg", 
+    roomType : "double",
+  },
+  {
+    title: "Basit1",
+    name : "Basit",
+    roomNumber : "23" , 
+    bookdAt : "23/4/23", 
+    person : '3-5', 
+    cover : "https://minimal-assets-api.vercel.app/assets/images/rooms/room-1.jpg", 
+    roomType : "double",
+  },
+  {
+    title: "Basit2",
+    name : "Basit",
+    roomNumber : "23" , 
+    bookdAt : "23/4/23", 
+    person : '3-5', 
+    cover : "https://minimal-assets-api.vercel.app/assets/images/rooms/room-1.jpg", 
+    roomType : "double",
+  }
+
+]
+
 
 export default function UserProfile() {
   const [currentTab, setCurrentTab] = useState('biryani');
@@ -48,19 +79,19 @@ export default function UserProfile() {
   const PROFILE_TABS = [
     {
       value: 'biryani',
-      component: <Dish />,
+      component: <Main posts={posts} />,
     },
     {
       value: 'burger',
-      component: <Dish />,
+      component: <Main posts={posts} />,
     },
     {
       value: 'salads',
-      component: <Dish />,
+      component: <Main posts={posts} />,
     },
     {
       value: 'shawarma',
-      component: <Dish />,
+      component: <Main posts={posts} />,
     },
   ];
 
@@ -76,7 +107,7 @@ export default function UserProfile() {
   return (
     <Page title="Main Menu">
       <Stack mb={5} direction="row" alignItems="center" justifyContent="space-between">
-        <DishSearch />
+        <DishSearch posts={posts} />
         <Stack  direction="row" mr={2} alignItems="center" justifyContent="space-between" >
         <Button 
            variant="contained" startIcon={<Iconify icon={'eva:plus-fill'} />}

@@ -3,6 +3,7 @@ import { paramCase } from 'change-case';
 import parse from 'autosuggest-highlight/parse';
 import match from 'autosuggest-highlight/match';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // @mui
 import { styled } from '@mui/material/styles';
 import { Link, Typography, Autocomplete, InputAdornment, Popper } from '@mui/material';
@@ -26,8 +27,11 @@ const PopperStyle = styled((props) => <Popper placement="bottom-start" {...props
 });
 
 // ----------------------------------------------------------------------
+DishSearch.propTypes = {
+  posts : PropTypes.array
+}
 
-export default function DishSearch() {
+export default function DishSearch({posts}) {
   const navigate = useNavigate();
 
   const isMountedRef = useIsMountedRef();
@@ -40,14 +44,15 @@ export default function DishSearch() {
     try {
       setSearchQuery(value);
       if (value) {
-        const response = await axios.get('/api/blog/posts/search', {
-          params: { query: value },
-        });
+      //   const response = await axios.get('/api/blog/posts/search', {
+      //     params: { query: value },
+      //   });
 
-        if (isMountedRef.current) {
-          setSearchResults(response.data.results);
-        }
-      }
+      //   if (isMountedRef.current) {
+      //     setSearchResults(response.data.results);
+      //   }
+     setSearchResults(posts)  
+    }
     } catch (error) {
       console.error(error);
     }

@@ -72,8 +72,8 @@ function BookingItem({ item }) {
             <Typography variant="subtitle2">{name}</Typography>
           </div>
            </Stack>
-           <IconButton>
-            <Iconify onClick={handleDrawerOpen} icon={'bi:three-dots-vertical'} width={16} height={16} />
+           <IconButton onClick={handleDrawerOpen}>
+            <Iconify  icon={'bi:three-dots-vertical'} width={16} height={16} />
             </IconButton>
            </Stack>
 
